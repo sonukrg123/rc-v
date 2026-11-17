@@ -9,6 +9,9 @@ module p04_alu_logic (
     output wire [31:0] y
 );
 
-    assign y = 32'd0;   // placeholder
+    assign y = (op==2'd0)?(a&b):
+        (op==2'd1)?(a|b):
+        (op==2'd2)?(a^b):
+              32'd0;// placeholder
 
 endmodule

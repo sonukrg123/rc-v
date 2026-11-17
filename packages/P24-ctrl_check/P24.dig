@@ -3,177 +3,363 @@
   <version>1</version>
   <attributes/>
   <visualElements>
-    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>ctrl_hw</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="100" y="100"/></visualElement>
-    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>ctrl_rom</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="100" y="160"/></visualElement>
-    <visualElement><elementName>In</elementName><elementAttributes><entry><string>Label</string><string>use_rom</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="100" y="220"/></visualElement>
-    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>ctrl</string></entry><entry><string>Bits</string><int>16</int></entry></elementAttributes><pos x="900" y="100"/></visualElement>
-    <visualElement><elementName>Out</elementName><elementAttributes><entry><string>Label</string><string>mismatch</string></entry><entry><string>Bits</string><int>1</int></entry></elementAttributes><pos x="900" y="160"/></visualElement>
-    <visualElement><elementName>Text</elementName><elementAttributes><entry><string>Description</string><string>P24 Control selector and checker - Digital task
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ctrl_hw</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>16</int>
+        </entry>
+      </elementAttributes>
+      <pos x="100" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ctrl_rom</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>16</int>
+        </entry>
+      </elementAttributes>
+      <pos x="100" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>use_rom</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>1</int>
+        </entry>
+      </elementAttributes>
+      <pos x="100" y="220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ctrl</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>16</int>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>mismatch</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>1</int>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Text</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>P24 Control selector and checker - Digital task
 Full size: multiplexer plus XOR/OR gates.
 Allowed parts: gates + Multiplexer, Demultiplexer, Decoder, PriorityEncoder
-Do not rename, move or delete the input and output pins.</string></entry></elementAttributes><pos x="100" y="40"/></visualElement>
-    <visualElement><elementName>Testcase</elementName><elementAttributes><entry><string>Label</string><string>public tests</string></entry><entry><string>Testdata</string><testData><dataString>ctrl_hw ctrl_rom use_rom ctrl mismatch
-33613 22628 0 33613 1
-11 11 1 11 0
-30848 36171 1 36171 1
-5379 65535 0 5379 1
-46286 4 1 4 1
-0 18 0 0 1
-65535 65535 0 65535 0
-38730 64208 1 64208 1
-7 35156 1 35156 1
-34814 34814 0 34814 0
-20 20 0 20 0
-22 0 0 22 1
-61551 28683 0 61551 1
-32768 26767 1 26767 1
-55837 38560 0 55837 1
-34213 34213 1 34213 0
-65535 65535 0 65535 0
-30 30 1 30 0
-10297 10297 0 10297 0
-32768 32768 1 32768 0
-35891 65535 1 65535 1
-42854 42854 1 42854 0
-0 28343 1 28343 1
-15 32968 0 15 1
-38465 22726 1 22726 1
-2 2 0 2 0
-25986 32767 0 25986 1
-26071 28586 0 26071 1
-32767 0 0 32767 1
-64036 64036 0 64036 0
-61286 65535 0 61286 1
-32768 16070 1 16070 1
-0 0 1 0 0
-32768 32768 0 32768 0
-9 11395 0 9 1
-25 36336 1 36336 1
-49931 20 0 49931 1
-49755 49755 1 49755 0
-40481 63692 1 63692 1
-47700 47700 1 47700 0
-0 63686 1 63686 1
-1810 1810 1 1810 0
-38394 38394 0 38394 0
-18562 18562 0 18562 0
-58984 58984 0 58984 0
-65535 16 0 65535 1
-65535 16 0 65535 1
-17 24 0 17 1
-14 17 1 17 1
-12 12 1 12 0
-62972 62972 0 62972 0
-54856 65535 1 65535 1
-32768 32040 1 32040 1
-1767 1767 0 1767 0
-0 0 1 0 0
-40626 40626 0 40626 0
-45437 45437 1 45437 0
-21 13563 0 21 1
-18134 18134 1 18134 0
-65535 65535 0 65535 0
-19 19 1 19 0
-65535 9576 1 9576 1
-15952 15952 0 15952 0
-32768 18458 0 32768 1
-22 22 0 22 0
-16 16 0 16 0
-61614 8 1 8 1
-65535 18264 0 65535 1
-27538 62076 0 27538 1
-19 9358 0 19 1
-0 0 0 0 0
-32767 32767 1 32767 0
-0 0 1 0 0
-65535 27711 0 65535 1
-0 0 0 0 0
-32767 41170 1 41170 1
-0 0 0 0 0
-31344 31344 1 31344 0
-1405 60614 1 60614 1
-65409 65409 1 65409 0
-36013 36013 0 36013 0
-33831 33831 0 33831 0
-46416 46416 0 46416 0
-36610 36330 1 36330 1
-22 22 1 22 0
-18 10222 0 18 1
-42613 42613 1 42613 0
-32767 19141 0 32767 1
-0 26706 1 26706 1
-17189 13669 1 13669 1
-18 18 1 18 0
-32768 32768 0 32768 0
-11194 11194 0 11194 0
-50194 50194 0 50194 0
-56590 60121 0 56590 1
-50098 50098 0 50098 0
-31478 64343 0 31478 1
-17 0 1 0 1
-0 0 0 0 0
-64521 36523 1 36523 1
-39232 39232 0 39232 0
-14717 14717 1 14717 0
-12998 52256 1 52256 1
-55413 4033 0 55413 1
-8179 8179 1 8179 0
-0 0 1 0 0
-9 9 0 9 0
-6679 63373 0 6679 1
-39190 15165 1 15165 1
-32768 32768 1 32768 0
-32767 32767 1 32767 0
-1 1 1 1 0
-40568 40568 1 40568 0
-13 13 0 13 0
-56292 56292 0 56292 0
-0 0 0 0 0
-32768 32768 1 32768 0
-55786 55786 0 55786 0
-15 15 1 15 0
-5556 4 1 4 1
-10047 56593 1 56593 1
-8409 8409 1 8409 0
-10881 35138 0 10881 1
-48457 61247 0 48457 1
-25573 56501 0 25573 1
-32768 32768 0 32768 0
-47864 47864 1 47864 0
-57229 1188 0 57229 1
-41193 41193 0 41193 0
-1594 1594 0 1594 0
-53790 53790 1 53790 0
-32767 32767 1 32767 0
-32768 65535 0 32768 1
-0 32767 1 32767 1
-28848 28848 0 28848 0
-0 0 1 0 0
-32768 32768 0 32768 0
-22230 22230 0 22230 0
-21637 2487 0 21637 1
-23857 23857 1 23857 0
-45189 45189 1 45189 0
-54437 54437 1 54437 0
-5834 65535 1 65535 1
-44078 65535 1 65535 1
-48384 16497 0 48384 1
-32767 32767 1 32767 0
-32768 32768 1 32768 0
-32768 39495 0 32768 1
-32768 32768 1 32768 0
-32767 32767 1 32767 0
-13693 32767 0 13693 1
-12 12 0 12 0
-58194 58194 0 58194 0
-11395 11395 1 11395 0
-44834 44834 1 44834 0
-25 25 1 25 0
-42096 42096 0 42096 0
-0 16 1 16 1
-0 13 0 0 1
-0 0 0 0 0</dataString></testData></entry></elementAttributes><pos x="100" y="320"/></visualElement>
+Do not rename, move or delete the input and output pins.</string>
+        </entry>
+      </elementAttributes>
+      <pos x="120" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Multiplexer</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>16</int>
+        </entry>
+      </elementAttributes>
+      <pos x="480" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>XOr</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>16</int>
+        </entry>
+        <entry>
+          <string>wideShape</string>
+          <boolean>true</boolean>
+        </entry>
+      </elementAttributes>
+      <pos x="440" y="280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>16</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="640" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Or</elementName>
+      <elementAttributes>
+        <entry>
+          <string>wideShape</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Inputs</string>
+          <int>16</int>
+        </entry>
+      </elementAttributes>
+      <pos x="840" y="260"/>
+    </visualElement>
   </visualElements>
-  <wires/>
+  <wires>
+    <wire>
+      <p1 x="100" y="160"/>
+      <p2 x="240" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="160"/>
+      <p2 x="900" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="240" y="160"/>
+      <p2 x="460" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="240" y="320"/>
+      <p2 x="440" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="320"/>
+      <p2 x="840" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="480"/>
+      <p2 x="840" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="480"/>
+      <p2 x="760" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="100"/>
+      <p2 x="320" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="100"/>
+      <p2 x="900" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="100"/>
+      <p2 x="460" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="260"/>
+      <p2 x="640" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="260"/>
+      <p2 x="840" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="420"/>
+      <p2 x="820" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="920" y="420"/>
+      <p2 x="960" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="580"/>
+      <p2 x="840" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="360"/>
+      <p2 x="840" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="520"/>
+      <p2 x="840" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="520"/>
+      <p2 x="720" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="200"/>
+      <p2 x="960" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="300"/>
+      <p2 x="560" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="300"/>
+      <p2 x="840" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="800" y="460"/>
+      <p2 x="840" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="460"/>
+      <p2 x="780" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="80"/>
+      <p2 x="480" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="400"/>
+      <p2 x="840" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="560"/>
+      <p2 x="840" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="560"/>
+      <p2 x="680" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="340"/>
+      <p2 x="840" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="760" y="500"/>
+      <p2 x="840" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="500"/>
+      <p2 x="740" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="120"/>
+      <p2 x="480" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="280"/>
+      <p2 x="440" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="280"/>
+      <p2 x="840" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="820" y="440"/>
+      <p2 x="840" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="440"/>
+      <p2 x="800" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="220"/>
+      <p2 x="500" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="720" y="540"/>
+      <p2 x="840" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="540"/>
+      <p2 x="700" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="380"/>
+      <p2 x="840" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="100"/>
+      <p2 x="320" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="800" y="440"/>
+      <p2 x="800" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="960" y="200"/>
+      <p2 x="960" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="500"/>
+      <p2 x="740" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="560"/>
+      <p2 x="680" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="80"/>
+      <p2 x="460" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="120"/>
+      <p2 x="460" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="460"/>
+      <p2 x="780" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="240" y="160"/>
+      <p2 x="240" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="260"/>
+      <p2 x="560" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="720" y="520"/>
+      <p2 x="720" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="120"/>
+      <p2 x="500" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="820" y="420"/>
+      <p2 x="820" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="760" y="480"/>
+      <p2 x="760" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="540"/>
+      <p2 x="700" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="160"/>
+      <p2 x="860" y="200"/>
+    </wire>
+  </wires>
   <measurementOrdering/>
 </circuit>

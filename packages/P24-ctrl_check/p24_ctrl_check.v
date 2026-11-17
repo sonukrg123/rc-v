@@ -10,7 +10,7 @@ module p24_ctrl_check (
     output wire mismatch
 );
 
-    assign ctrl = 16'd0;   // placeholder
-    assign mismatch = 1'd0;   // placeholder
+    assign ctrl = use_rom ? ctrl_rom : ctrl_hw;   
+     assign mismatch = (ctrl_hw != ctrl_rom);   
 
 endmodule

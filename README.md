@@ -31,7 +31,8 @@ flowchart LR
 | How the computer works | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
 | The instructions and the assembler | [docs/ISA.md](docs/ISA.md) |
 | All 66 packages | [docs/PACKAGES.md](docs/PACKAGES.md) |
-| Live progress of the whole class | the class board (GitHub Pages of this repository) |
+| Live progress of the whole class | [the class board](https://campus-sutra.github.io/rc-v/) |
+| **Run the class computer in your browser** | [the RC-V console](https://campus-sutra.github.io/rc-v/console/) |
 
 ## How to join
 
@@ -57,6 +58,15 @@ GitHub account is enough; your teacher knows which code belongs to whom.
 
 GitHub checks everything when you open a pull request, so you only need Digital
 on your laptop. If you also have Python 3:
+
+To see the class computer run in your browser (pick a package, type its input, watch the
+terminal, text screen, LEDs and hex display):
+
+```bash
+python tools/console.py
+```
+
+then open http://localhost:8066. Other tools:
 
 ```bash
 cd tools

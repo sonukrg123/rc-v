@@ -58,6 +58,7 @@ jobs:
         run: |
           git fetch -q origin registry && git show origin/registry:members.json > /tmp/members.json || echo '{}' > /tmp/members.json
           python3 tools/ci/board.py /tmp/check.json /tmp/members.json /tmp/classrom.txt site
+          (cd tools && python3 -m rcv.webexport ../site/console)   # the in-browser class computer
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

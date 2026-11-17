@@ -12,6 +12,8 @@ p23_main:
         mv      s0, a0              # s0 = A
         call    rcv_read_dec        # a0 = B
         mv      s1, a0              # s1 = B
+        beq     s0, zero, p23_zero
+        beq     s1, zero, p23_zero
 
         mv      t0, s0              # t0 = working copy of A
         mv      t1, s1              # t1 = working copy of B
@@ -36,11 +38,13 @@ p23_done:
 
         mv      a0, s0              # a0 = A
         mv      a1, s2              # a1 = GCD
+        # divide first: (A/GCD)*B avoids overflowing 32 bits like A*B would
         call    rcv_udiv            # a0 = A / GCD
         mv      a1, s1              # a1 = B
         call    rcv_umul            # a0 = (A / GCD) * B
         mv      s0, a0              # s0 = LCM
-
+        
+p23_print_lcm:
         la      a0, p23_str_lcm
         call    rcv_puts
         mv      a0, s0
@@ -52,7 +56,16 @@ p23_done:
         lw      s0, 8(sp)
         lw      ra, 12(sp)
         addi    sp, sp, 16
-        ret
+        ret 
+        p23_zero:
+        add     s2, s0, s1          # gcd(0, x) = x
+        la      a0, p23_str_gcd
+        call    rcv_puts
+        mv      a0, s2
+        call    rcv_print_udec
+        call    rcv_newline
+        li      s0, 0               # lcm(0, x) = 0
+        j       p23_print_lcm
 
         .rodata
 p23_str_gcd:

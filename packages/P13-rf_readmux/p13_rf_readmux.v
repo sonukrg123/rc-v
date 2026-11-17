@@ -8,6 +8,6 @@ module p13_rf_readmux (
     output wire [31:0] rd
 );
 
-    assign rd = 32'd0;   // placeholder
+    assign rd = q_flat[ra*32 +: 32];
 
 endmodule

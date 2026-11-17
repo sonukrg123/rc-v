@@ -102,7 +102,12 @@ def collect(prog_dir=None):
             trial = assemble([("crt0.s", (LIB / "crt0.s").read_text()), ("m.s", "main: ret\n"),
                               (path.name, text), ("lib.s", (LIB / "rcv_lib.s").read_text())])
             ok = not trial["errors"]
-        srcs.append((path.name if ok else f"stub{n}.s", text if ok else stub(n)))
+        body = text if ok else stub(n)
+        # like a real linker: every program starts and ends on a word boundary in both
+        # sections, whatever the previous program left behind (e.g. an odd-length string)
+        align = "\n        .text\n        .align 2\n        .data\n        .align 2\n        .text\n"
+        body = align + body + align
+        srcs.append((path.name if ok else f"stub{n}.s", body))
         status[n] = "ready" if ok else "not ready"
     return srcs, status
 

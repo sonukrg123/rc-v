@@ -1,7 +1,7 @@
 // P01 ALU adder/subtractor
-// Keep the module name and the port list exactly as they are.
-// You may change 'output wire' to 'output reg' if you assign an output in an always block.
-// Delete the placeholder assigns and write your design.
+// y = a + b when sub = 0, y = a - b when sub = 1 (computed as a + ~b + 1)
+// c = carry out of the 32-bit addition
+// v = signed overflow = carry into bit 31 XOR carry out of bit 31
 module p01_alu_addsub (
     input  wire [31:0] a,
     input  wire [31:0] b,
@@ -11,8 +11,18 @@ module p01_alu_addsub (
     output wire v
 );
 
-    assign y = 32'd0;   // placeholder
-    assign c = 1'd0;   // placeholder
-    assign v = 1'd0;   // placeholder
+    // XOR gates on b: b when sub = 0, ~b when sub = 1
+    wire [31:0] bx = b ^ {32{sub}};
+
+    // full 32-bit sum with carry out (33 bits); sub is the carry-in (the "+1")
+    wire [32:0] sum = {1'b0, a} + {1'b0, bx} + {32'b0, sub};
+
+    // carry into bit 31 = carry out of the lower 31 bits
+    wire [31:0] low = {1'b0, a[30:0]} + {1'b0, bx[30:0]} + {31'b0, sub};
+    wire c31 = low[31];
+
+    assign y = sum[31:0];
+    assign c = sum[32];
+    assign v = c31 ^ sum[32];
 
 endmodule

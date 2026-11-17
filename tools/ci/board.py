@@ -85,6 +85,9 @@ R = dossier (green = passes, red = fails, grey = not handed in). Updated {now}.<
 <div class="kpi"><b>{totals['dossier']}/66</b>dossiers done</div>
 </div>
 {''.join(tiles)}
+<h2>Run the class computer</h2>
+<p><a href="console/"><b>Open the RC-V console</b></a>: pick any student's package, type its input and run it in your
+browser. It shows the terminal, the text screen, the LEDs and the hex display.</p>
 <h2>The class ROM on the RC-V simulator</h2>
 <p>Every merged program linked into one ROM with a menu, run with each program's first test input.</p>
 {rom_block}

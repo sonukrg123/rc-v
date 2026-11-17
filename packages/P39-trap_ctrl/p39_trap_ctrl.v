@@ -13,7 +13,13 @@ module p39_trap_ctrl (
     output wire [31:0] cause
 );
 
-    assign trap = 1'd0;   // placeholder
-    assign cause = 32'd0;   // placeholder
+    wire ei = ~stall & irq & mie;
+wire il = ~stall & ~ei & illegal;
+wire ec = ~stall & ~ei & ~il & is_ecall;
+
+assign trap = ei | il | ec;
+assign cause = ei ? (32'h80000010 + irq_cause) :
+               il ? 32'd2 :
+               ec ? 32'd11 : 32'd0;
 
 endmodule

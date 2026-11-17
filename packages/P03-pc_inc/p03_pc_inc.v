@@ -7,6 +7,6 @@ module p03_pc_inc (
     output wire [31:0] pc4
 );
 
-    assign pc4 = 32'd0;   // placeholder
+    assign pc4 = pc + 32'd4;   // placeholder
 
 endmodule
